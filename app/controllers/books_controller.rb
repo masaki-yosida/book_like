@@ -1,14 +1,7 @@
 # app/controllers/books_controller.rb
 class BooksController < ApplicationController
   def index
-    if params[:author_id].present?
-      author = Author.find(params[:author_id])
-      @books = author.books.sample(1)
-    elsif params[:query].present?
-      @books = Book.search(params[:query])
-    else
-      @books = Book.all
-    end
+    @books = Book.all
   end
 
   def new
