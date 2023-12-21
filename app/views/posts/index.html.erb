@@ -1,3 +1,4 @@
+<!-- app/views/posts/index.html.erb -->
 <h1>Posts</h1>
 
 <ul>
@@ -12,7 +13,8 @@
   <!-- ログインしている場合の表示 -->
   <%= link_to 'New Post', new_post_path %>
   <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
-  <p>Signed in as: <%= current_user.nickname %></p> <!-- この行を追加 -->
+  <p>Signed in as: <%= current_user.nickname %></p>
+  <%= link_to '新しい投稿', new_book_path %> <!-- この行を追加 -->
 <% else %>
   <!-- ログインしていない場合の表示 -->
   <%= link_to 'ログイン', new_user_session_path %>
