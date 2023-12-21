@@ -11,7 +11,7 @@
 <% if user_signed_in? %>
   <!-- ログインしている場合の表示 -->
   <%= link_to 'New Post', new_post_path %>
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+  <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
   <p>Signed in as: <%= current_user.nickname %></p> <!-- この行を追加 -->
 <% else %>
   <!-- ログインしていない場合の表示 -->
