@@ -9,19 +9,15 @@
       <th>概要</th>
     </tr>
   </thead>
-
-<tbody>
-  <% @books.each do |book| %>
-    <tr>
-      <td><%= book.author&.name || "Unknown Author" %></td>
-      <td><%= book.author %></td>
-      <td><%= book.description %></td>
-    </tr>
-  <% end %>
-</tbody>
-
-
-
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= Author.find(book.author_id).name %></td>
+        <td><%= book.author %></td>
+        <td><%= book.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <%= link_to 'New Book', new_book_path %>
