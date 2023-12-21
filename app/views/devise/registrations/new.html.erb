@@ -1,23 +1,23 @@
 <div class="contents row">
   <div class="container">
-    <h2>Sign up</h2>
+    <h2>シンキトウロクガメン</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
 
 
       <div class="field">
-        <%= f.label :nickname %> <em>(3 characters maximum)</em><br />
-        <%= f.text_field :nickname, autofocus: true, maxlength: "3" %>
+        <%= f.label :アナタのナマエをオシエテ %> <em>(10 characters maximum)</em><br />
+        <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
       </div>
 
       <div class="field">
-        <%= f.label :email %><br />
+        <%= f.label :アナタのメールアドレスをオシエテ %><br />
         <%= f.email_field :email %>
       </div>
 
       <div class="field">
-        <%= f.label :password %>
+        <%= f.label :パスワードをキメテ %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
@@ -25,7 +25,7 @@
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :パスワードをサイニュウリョクして %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" %>
       </div>
 
