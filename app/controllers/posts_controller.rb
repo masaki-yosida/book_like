@@ -1,6 +1,8 @@
 # app/controllers/posts_controller.rb
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
 
   def index
     @posts = Post.all
@@ -47,5 +49,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content)
+  end
+
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :favorite_word])
   end
 end
