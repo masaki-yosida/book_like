@@ -15,6 +15,6 @@
   <p>Signed in as: <%= current_user.nickname %></p> <!-- この行を追加 -->
 <% else %>
   <!-- ログインしていない場合の表示 -->
-  <%= link_to 'Login', new_user_session_path %>
+  <%= link_to 'ログイン', new_user_session_path %>
   <%= link_to 'Sign Up', new_user_registration_path %>
 <% end %>
