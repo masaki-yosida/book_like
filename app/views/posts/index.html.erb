@@ -1,25 +1,48 @@
-<!-- app/views/posts/index.html.erb -->
-<h1>新しい本とであお〜</h1>
-<%= form_tag(books_path, method: :get) do %>
-  <%= select_tag :author_id, options_for_select(Author.all.map { |a| [a.name, a.id] }, params[:author_id]), prompt: "ーーー" %>
-  <%= submit_tag "検索" %>
-<% end %>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>5-8 紙吹雪が舞う</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- レイアウトを制御する独自のCSSを読み込み -->
+  <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/5-8.css">
+  
+</head>
+<body>
+  <div id="particles-js"></div>
+  <div id="wrapper">
+    <div class="wrap">
+       <div class="content">
+        <!-- リンクとログインユーザー情報の表示 -->
+        <%= link_to '使いかた', new_post_path %>
+        <% if user_signed_in? %>
+        <!-- ログインしている場合の表示 -->
+        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <p>ヨウコソ: <%= current_user.nickname %></p>
+        <%= link_to '新しい投稿', new_book_path %> <!-- この行を追加 -->
+        <% else %>
+        <!-- ログインしていない場合の表示 -->
+        <%= link_to 'ログイン', new_user_session_path %>
+        <%= link_to '新規登録', new_user_registration_path %>
+    <% end %>
+      </div>
+      <div class="content"><h1 class >新しい本とであお〜</h1></div>
+      <div class="content">
+      <%= form_tag(books_path, method: :get, class: "search-form") do %>
+      <%= select_tag :author_id, options_for_select(Author.all.map { |a| [a.name, a.id] }, params[:author_id]), prompt: "====", class: "author-select" %>
+      <%= submit_tag "検索", class: "search-button" %>
+       <% end %>
+      </div>
 
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, post %>
-    </li>
-  <% end %>
-</ul>
-<%= link_to '使いかた', new_post_path %>
-<% if user_signed_in? %>
-  <!-- ログインしている場合の表示 -->
-  <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
-  <p>ヨウコソ: <%= current_user.nickname %></p>
-  <%= link_to '新しい投稿', new_book_path %> <!-- この行を追加 -->
-<% else %>
-  <!-- ログインしていない場合の表示 -->
-  <%= link_to 'ログイン', new_user_session_path %>
-  <%= link_to '新規登録', new_user_registration_path %>
-<% end %>
+     
+    
+
+  </div>
+
+  <!-- particles.jsを読み込む -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- 5-8.jsを読み込む -->
+  <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js"></script>
+</body>
+</html>
