@@ -1,8 +1,16 @@
-# app/controllers/books_controller.rb
+
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    if params[:author_id].present?
+      author = Author.find(params[:author_id])
+      @books = author.books.sample(1)
+    elsif params[:query].present?
+      @books = Book.search(params[:query])
+    else
+      @books = Book.all
+    end
   end
+
 
   def new
     @book = Book.new
