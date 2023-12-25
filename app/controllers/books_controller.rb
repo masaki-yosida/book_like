@@ -1,14 +1,7 @@
 # app/controllers/books_controller.rb
 class BooksController < ApplicationController
   def index
-    if params[:author_id].present?
-      author = Author.find(params[:author_id])
-      @books = author.books
-    elsif params[:query].present?
-      @books = Book.search(params[:query])
-    else
-      @books = Book.all
-    end
+    @books = Book.all
   end
 
   def new
@@ -26,7 +19,9 @@ class BooksController < ApplicationController
   end
 
   private
+
+  
   def book_params
-    params.require(:book).permit(:author_id, :title, :description)
+    params.require(:book).permit(:author_id, :author, :description)
   end
-end  
+end

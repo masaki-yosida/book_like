@@ -8,8 +8,9 @@ class Author < ActiveHash::Base
     { id: 3, name: '著者3' },
     { id: 4, name: '著者4' },
     { id: 5, name: '著者5' },
-    # Add other necessary authors
+    # 他にも必要な著者を追加
   ]
 
-  has_many :books, class_name: 'Book', foreign_key: 'author_id'
+  has_many :books
 end
+
