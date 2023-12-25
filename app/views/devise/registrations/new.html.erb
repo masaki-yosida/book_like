@@ -22,31 +22,31 @@
 
       <div class="field">
         <%= f.label :アナタのナマエをオシエテ %> <em>(10 characters maximum)</em><br />
-        <%= f.text_field :nickname, autofocus: true, maxlength: "10" %>
+        <%= f.text_field :nickname, autofocus: true, maxlength: "10",class: "author-select"  %>
       </div>
 
       <div class="field">
         <%= f.label :アナタのメールアドレスをオシエテ %><br />
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: "author-select"   %>
       </div>
 
       <div class="field">
         <%= f.label :パスワードをキメテ %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %> characters minimum,)</em>
         <% end %><br />
-        <%= f.password_field :password, autocomplete: "off" %>
+        <%= f.password_field :password, autocomplete: "off",class: "author-select"  %>
       </div>
 
       <div class="field">
         <%= f.label :パスワードをサイニュウリョクして %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" ,class: "author-select" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "新規登録じゃ" %>
+        <%= f.submit "新規登録じゃ", class: "search-button" %>
       </div>
-      <%= link_to 'トップに戻る', posts_path %>
+      <%= link_to 'トップに戻る', posts_path, class: "search-button" %>
     <% end %>
   </div>
 </div>
