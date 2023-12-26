@@ -75,3 +75,22 @@ particlesJS("particles-js",{
     },
     "retina_detect":true
   });
+  document.addEventListener("turbo:load", function() {
+    // 初回読み込み時とページ遷移時に共通の処理を実行
+    updatePriceDetails();
+  
+    const priceInput = document.getElementById("item-price");
+  
+    priceInput.addEventListener("input", updatePriceDetails);
+  });
+  
+  // turbo:render イベント時の処理
+  document.addEventListener("turbo:render", function() {
+    // ページ遷移時にも共通の処理を実行
+    updatePriceDetails();
+  
+    const priceInput = document.getElementById("item-price");
+  
+    priceInput.addEventListener("input", updatePriceDetails);
+  });
+  
