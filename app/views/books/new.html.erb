@@ -18,7 +18,7 @@
 
 <div class="field">
   <%= form.label :author_id %>
-  <%= form.collection_select :author_id, Author.all, :id, :name, prompt: '選択してください' , class: "author-select" %>
+  <%= form.collection_select :author_id, Author.all, :id, :name, class: "author-select" %>
 </div>
   <div class="field">
     <%= form.label :タイトル %>
