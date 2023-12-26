@@ -18,7 +18,7 @@
         <%= link_to '使いかた', new_post_path, data: { turbo: false } %>
         <% if user_signed_in? %>
         <!-- ログインしている場合の表示 -->
-        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, data: { turbo: false } %>
+        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
         <p>ヨウコソ: <%= current_user.nickname %></p>
         <%= link_to '新しい投稿', new_book_path, data: { turbo: false } %> <!-- この行を追加 -->
         <% else %>
