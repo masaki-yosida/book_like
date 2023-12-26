@@ -1,19 +1,47 @@
+
+
+</div>
+
+
+</div>
+
+  <!-- particles.jsを読み込む -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- 5-8.jsを読み込む -->
+  <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>5-7 ホタルが舞う</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<!--==============レイアウトを制御する独自のCSSを読み込み===============-->
-<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-7/css/reset.css">
-<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-7/css/5-7.css">
+  <meta charset="utf-8">
+  <title>5-8 紙吹雪が舞う</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- レイアウトを制御する独自のCSSを読み込み -->
+  <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/5-8.css">
+  
 </head>
 <body>
-<div id="particles-js">
-  <h1>あなたの押すススメの本はこちら</h1>
+  <div id="particles-js"></div>
+  <div id="wrapper">
+    <div class="wrap">
+        <h1>あなたの押すススメの本はこちら</h1>
 
 <table>
   <thead>
+    <div class="content">
     <tr>
       <th>作者</th>
       <th>題名</th>
@@ -28,16 +56,30 @@
         <td><%= book.description %></td>
       </tr>
     <% end %>
+    </div>
   </tbody>
 </table>
-
-<%= link_to 'New Book', new_book_path, class: "search-button" %>
-<%= link_to 'トップに戻る', posts_path, class: "search-button"%>
+<div class="content">
+<%= link_to 'New', new_book_path, class: "search-button" %>
+</div>
+<div class="content">
+<%= link_to 'トップに戻る', posts_path, class: "search-button" %>
+<div class="content">
 <p class=masa>© 2024 Masaki_yoshida.</p>
-</div>
-<div id="wrapper">
-</div>
-<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>　
-<script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-7/js/5-7.js"></script>
+       
+        
+    </div>
+
+     
+    
+
+  </div>
+
+  <!-- particles.jsを読み込む -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- 5-8.jsを読み込む -->
+  <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js"></script>
 </body>
 </html>
+
+
