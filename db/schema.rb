@@ -13,7 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2023_12_21_052510) do
   create_table "books", charset: "utf8", force: :cascade do |t|
     t.integer "author_id"
-    t.string "author"
+    t.string "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

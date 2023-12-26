@@ -21,8 +21,9 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
-
+    author = Author.find(params[:book][:author_id])  # この行が正しく実行されているか確認
+    @book = author.books.new(book_params.except(:author_id))
+  
     if @book.save
       redirect_to books_path, notice: 'Book was successfully created.'
     else
@@ -32,7 +33,6 @@ class BooksController < ApplicationController
 
   private
 
-  
   def book_params
     params.require(:book).permit(:author_id, :title, :description)
   end
