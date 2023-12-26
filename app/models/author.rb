@@ -1,5 +1,6 @@
 class Author < ActiveHash::Base
   include ActiveHash::Associations
+  field :name
 
   self.data = [
     { id: 1, name: '青空文庫' },

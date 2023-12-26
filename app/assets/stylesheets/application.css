@@ -1,3 +1,5 @@
+
+
 .wrap {
   display:flex;
   flex-flow: column;
@@ -38,8 +40,6 @@
 .show{
   text-align: center; 
 }
-
-
 
 
 
