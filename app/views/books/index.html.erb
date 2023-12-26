@@ -1,27 +1,3 @@
-
-
-</div>
-
-
-</div>
-
-  <!-- particles.jsを読み込む -->
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <!-- 5-8.jsを読み込む -->
-  <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js"></script>
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -60,10 +36,8 @@
   </tbody>
 </table>
 <div class="content">
-<%= link_to 'New', new_book_path, class: "search-button" %>
-</div>
-<div class="content">
-<%= link_to 'トップに戻る', posts_path, class: "search-button" %>
+<%= link_to 'New', new_book_path, class: "search-button", data: { turbo: false } %>
+<%= link_to 'トップに戻る', posts_path, class: "search-button", data: { turbo: false } %>
 <div class="content">
 <p class=masa>© 2024 Masaki_yoshida.</p>
        
