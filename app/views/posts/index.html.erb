@@ -15,16 +15,16 @@
     <div class="wrap">
        <div class="content">
         <!-- リンクとログインユーザー情報の表示 -->
-        <%= link_to '使いかた', new_post_path %>
+        <%= link_to '使いかた', new_post_path, data: { turbo: false } %>
         <% if user_signed_in? %>
         <!-- ログインしている場合の表示 -->
-        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete }, data: { turbo: false } %>
         <p>ヨウコソ: <%= current_user.nickname %></p>
-        <%= link_to '新しい投稿', new_book_path %> <!-- この行を追加 -->
+        <%= link_to '新しい投稿', new_book_path, data: { turbo: false } %> <!-- この行を追加 -->
         <% else %>
         <!-- ログインしていない場合の表示 -->
-        <%= link_to 'ログイン', new_user_session_path %>
-        <%= link_to '新規登録', new_user_registration_path %>
+        <%= link_to 'ログイン', , data: { turbo: false } %>
+        <%= link_to '新規登録', new_user_registration_path, data: { turbo: false } %>
       <% end %>
       </div>
       <%= link_to 'お問い合わせフォーム', contact_books_path, class: 'btn btn-primary' %>
@@ -32,7 +32,7 @@
       <div class="content">
       <%= form_tag(books_path, method: :get, class: "search-form") do %>
       <%= select_tag :author_id, options_for_select(Author.all.map { |a| [a.name, a.id] }, params[:author_id]), prompt: "====", class: "author-select" %>
-      <%= submit_tag "検索", class: "search-button" %>
+      <%= submit_tag "検索", class: "search-button", data: { turbo: false } %>
       <p class=masa>© 2024 Masaki_yoshida.</p>
        <% end %>
       </div>
