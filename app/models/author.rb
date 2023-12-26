@@ -3,11 +3,10 @@ class Author < ActiveHash::Base
   field :name
 
   self.data = [
-    { id: 1, name: '太宰治' },
-    { id: 2, name: 'ブルーロック' },
-    { id: 3, name: 'ワンピース' },
-    { id: 4, name: 'ナルト' },
-    { id: 5, name: '著者5' },
+    { id: 1, name: '青空文庫' },
+    { id: 2, name: 'Kindle Unlimited' },
+    { id: 3, name: 'カクヨム' },
+    { id: 4, name: 'みんなのお気に入り' },
     # 他にも必要な著者を追加
   ]
 
