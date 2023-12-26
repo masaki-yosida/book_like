@@ -7,11 +7,14 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.new
   end
 
   def new
     @post = Post.new
   end
+
+  
 
   def create
     @post = Post.new(post_params)

@@ -25,8 +25,9 @@
         <!-- ログインしていない場合の表示 -->
         <%= link_to 'ログイン', new_user_session_path %>
         <%= link_to '新規登録', new_user_registration_path %>
-    <% end %>
+      <% end %>
       </div>
+      <%= link_to 'お問い合わせフォーム', contact_books_path, class: 'btn btn-primary' %>
       <div class="content"><h1>新しい本とであお〜</h1></div>
       <div class="content">
       <%= form_tag(books_path, method: :get, class: "search-form") do %>
