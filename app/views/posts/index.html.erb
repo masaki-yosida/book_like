@@ -13,11 +13,12 @@
   <div id="particles-js"></div>
   <div id="wrapper">
     <div class="wrap">
+       <div class="content"><h1>新しい本とであお〜</h1></div>
        <div class="content">
         <!-- リンクとログインユーザー情報の表示 -->
         <% if user_signed_in? %>
         <!-- ログインしている場合の表示 -->
-        <div class= "name">ヨウコソ: <%= current_user.nickname %>様</div>
+        <div class= "name con">ヨウコソ: <%= current_user.nickname %>様</div>
         <%= link_to '使いかた', new_post_path, data: { turbo: false },class: "form" %>
         <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete },class: "form" %>
         <%= link_to '新しい投稿', new_book_path, data: { turbo: false },class: "form" %> <!-- この行を追加 -->
@@ -29,7 +30,6 @@
       <% end %>
       </div>
       <%= link_to 'お問い合わせフォーム', contact_books_path, class: 'btn btn-primary' %>
-      <div class="content"><h1>新しい本とであお〜</h1></div>
       <div class="content">
       <%= form_tag(books_path, method: :get, class: "search-form") do %>
       <%= select_tag :author_id, options_for_select(Author.all.map { |a| [a.name, a.id] }, params[:author_id]), class: "author-select" %>

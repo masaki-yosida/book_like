@@ -13,30 +13,44 @@
 <body>
 <div id="particles-js"></div>
 <div id="wrapper">
+<div class="wrap">
+
 <h1>New Book</h1>
 <%= form_with(model: @book, local: true) do |form| %>
 
+<div class="content">
 <div class="field">
-  <%= form.label :author_id %>
-  <%= form.collection_select :author_id, Author.all, :id, :name, class: "author-select" %>
+  <div class="actions">
+  <%= form.label :ジャンル %>
+  </div>
+  <div class="author-select">
+  <%= form.collection_select :author_id, Author.all, :id, :name %>
+  </div>
 </div>
   <div class="field">
+    <div class="actions">
     <%= form.label :タイトル %>
+    </div>
     <%= form.text_field :title, required: true,class: "author-select" %>
   </div>
-
   <div class="field">
+    <div class="actions">
     <%= form.label :概要 %>
+    </div>
     <%= form.text_area :description,class: "author-select" %>
   </div>
-
   <div class="actions">
     <%= form.submit "新規登録",class: "search-button", data: { turbo: false } %>
+    <%= link_to 'トップに戻る', posts_path,class: "search-button", data: { turbo: false } %>
+</div>
   </div>
+<p class=masa,>© 2024 Masaki_yoshida.</p>
+</div>
 <% end %>
 
-<%= link_to 'トップに戻る', posts_path,class: "search-button", data: { turbo: false } %>
-<p class=masa>© 2024 Masaki_yoshida.</p>
+
+
+
 <!--/wrapper--></div>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-4/js/5-4.js"></script>
