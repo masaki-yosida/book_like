@@ -15,16 +15,16 @@
     <div class="wrap">
        <div class="content">
         <!-- リンクとログインユーザー情報の表示 -->
-        <%= link_to '使いかた', new_post_path, data: { turbo: false } %>
+        <%= link_to '使いかた', new_post_path, data: { turbo: false },class: "form" %>
         <% if user_signed_in? %>
         <!-- ログインしている場合の表示 -->
-        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete } %>
+        <%= link_to 'ログアウト', destroy_user_session_path, data: { turbo_method: :delete },class: "form" %>
         <p>ヨウコソ: <%= current_user.nickname %></p>
-        <%= link_to '新しい投稿', new_book_path, data: { turbo: false } %> <!-- この行を追加 -->
+        <%= link_to '新しい投稿', new_book_path, data: { turbo: false },class: "form" %> <!-- この行を追加 -->
         <% else %>
         <!-- ログインしていない場合の表示 -->
-        <%= link_to 'ログイン', new_user_session_path, data: { turbo: false } %>
-        <%= link_to '新規登録', new_user_registration_path, data: { turbo: false } %>
+        <%= link_to 'ログイン', new_user_session_path, data: { turbo: false },class: "form" %>
+        <%= link_to '新規登録', new_user_registration_path, data: { turbo: false },class: "form" %>
       <% end %>
       </div>
       <%= link_to 'お問い合わせフォーム', contact_books_path, class: 'btn btn-primary' %>
