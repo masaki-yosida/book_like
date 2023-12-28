@@ -1,24 +1,37 @@
 # README
+・アプリケーション名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+・アプリケーション概要
+利用者が本を登録できる。
+登録してある本をランダムで１冊選んでくれる
+・URL
+https://book-user-id.onrender.com
+・テスト用アカウント
 
-Things you may want to cover:
+・利用方法
+登録されている本をランダムで１冊選んでくれる。
+ログインしてくださったユーザは登録する頃ができる。
+・アプリケーションを作成した背景
+自分のスキルアップの為
+私が本を読むのが好きで次に何の本を読んだらいいかを決めるのに時間がかかるため
+自分で意図的に選んだものではないので新たな発見ができるのではないかと思った
+使用者の読んだ本を登録することによって他人にも読んで交流を深めていただけると考えたから
+・実装予定の機能
+使用者の意見を反映させる
+・データベース設計
 
-* Ruby version
+・画面遷移図
 
-* System dependencies
+・開発環境
+フロントエンド言語：JavaScript、HTML、CSS
+バックエンドフレームワーク：Rails7.0.0 
+バックエンド言語:Ruby3.2.0
+ミドルウェア：Mysql0.5.5、PostgreSQL
+インフラ：Render
+工夫したポイント
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+・改善点
+Renderを使いデプロイしているので重たい
+レスポンシブデザインのスマートフォンで本を登録したさい、確認画面の文字が読みにくい
+・制作時間
+30時間
