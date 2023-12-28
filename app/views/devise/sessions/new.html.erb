@@ -18,19 +18,19 @@
     <h2>ログイン〜</h2>
     <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <div class="field">
-        <%= f.label :メールアドレスを打て %><br />
+        <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, autofocus: true,class: "author-select"  %>
       </div>
 
       <div class="field">
-        <%= f.label :パスワードを打つんじゃ %><br />
+        <%= f.label :パスワード %><br />
         <%= f.password_field :password, autocomplete: "off",class: "author-select"  %>
       </div>
 
 
 
       <div class="actions">
-        <%= f.submit "ログイイン", class: "search-button", data: { turbo: false } %>
+        <%= f.submit "ログイン", class: "search-button", data: { turbo: false } %>
       </div>
       <p class=masa>© 2024 Masaki_yoshida.</p>
     <% end %>
