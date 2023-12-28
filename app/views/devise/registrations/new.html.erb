@@ -14,37 +14,37 @@
 <div id="wrapper">
   <div class="contents row">
   <div class="container">
-    <h2>シンキトウロクガメン</h2>
+    <h2>新規登録</h2>
     <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
 
 
       <div class="field">
-        <%= f.label :アナタの名前 %> <em>(10 文字以内でお願いします)</em><br />
+        <%= f.label :名前 %> <em>(10 文字以内)</em><br />
         <%= f.text_field :nickname, autofocus: true, maxlength: "10",class: "author-select"  %>
       </div>
 
       <div class="field">
-        <%= f.label :アナタのメールアドレスをオシエテ %><br />
+        <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, class: "author-select"   %>
       </div>
 
       <div class="field">
-        <%= f.label :パスワードをキメテ %>
+        <%= f.label :パスワード %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> 文字以上でお願いします,)</em>
+          <em>(<%= @minimum_password_length %> 文字以上,)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "off",class: "author-select"  %>
       </div>
 
       <div class="field">
-        <%= f.label :パスワードをサイニュウリョクして %><br />
+        <%= f.label :パスワード %><br />
         <%= f.password_field :password_confirmation, autocomplete: "off" ,class: "author-select" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "新規登録じゃ", class: "search-button" %>
+        <%= f.submit "新規登録", class: "search-button" %>
         <%= link_to 'トップに戻る', posts_path, class: "search-button" %>
       </div>
       
