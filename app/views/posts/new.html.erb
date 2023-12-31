@@ -1,54 +1,56 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<title>5-11 波打つ（1 つ 重なりあり）</title>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<!--==============レイアウトを制御する独自のCSSを読み込み===============-->
-<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-11/css/reset.css">
-<link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-11/css/5-11.css">
+  <meta charset="utf-8">
+  <title>5-8 紙吹雪が舞う</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- レイアウトを制御する独自のCSSを読み込み -->
+  <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/css/5-8.css">
+  
 </head>
 <body>
-<div id="wrapper">
-   <div class="wrap">
-    <div class="content"><h1>ご使用方法。</h1></div>
-    <div class="content">
+  <div id="particles-js"></div>
+  <div id="wrapper">
+    <div class="wrap">
+       <div class="content"><h1>新しい本とであお〜</h1></div>
+       <div class="content">
+        <h2>1.検索機能</h2>
+        <a href="https://gyazo.com/18c0daa05f03394ccd27c5d0faf5a99d"><img src="https://i.gyazo.com/18c0daa05f03394ccd27c5d0faf5a99d.png" alt="Image from Gyazo" width="20%"/></a>
+        <a href="https://gyazo.com/16ce82fce99d50bee1da76d24c01f981"><img src="https://i.gyazo.com/16ce82fce99d50bee1da76d24c01f981.png" alt="Image from Gyazo" width="20%"/></a>
+        <a href="https://gyazo.com/6c830d8e5b9e14d5386d0165fa5bac55"><img src="https://i.gyazo.com/6c830d8e5b9e14d5386d0165fa5bac55.png" alt="Image from Gyazo" width="20%"/></a>
+        <h4>選択してくださいのところをクリックしジャンルを選んでください。ジャンルを選択したら検索を押してください。検索結果はランダムに１冊でます。<br>注記今回は青空文庫のみ登録しています。他の作品に関しては随時登録して行きます。よかった登録お願いします。</h4>
+       </div>
+
+
+       <div class="content">
+        <h2>2.投稿方法</h2>
+        <a href="https://gyazo.com/11b2ad8cb601099e90c5465a18143b4e"><img src="https://i.gyazo.com/11b2ad8cb601099e90c5465a18143b4e.png" alt="Image from Gyazo" width="20%"/></a>
+        <a href="https://gyazo.com/6f8f48d0928d3a08090a7e5e92b6963b"><img src="https://i.gyazo.com/6f8f48d0928d3a08090a7e5e92b6963b.png" alt="Image from Gyazo" width="20%"/></a>
+        <a href="https://gyazo.com/30ea3888e4111e8770a5c2c33082856e"><img src="https://i.gyazo.com/30ea3888e4111e8770a5c2c33082856e.png" alt="Image from Gyazo" width="20%"/></a>
+        <a href="https://gyazo.com/37380cc8234cc2f34aee4b4a1862bf33"><img src="https://i.gyazo.com/37380cc8234cc2f34aee4b4a1862bf33.png" alt="Image from Gyazo" width="20%"/></a>
+        <h4>新規登録ボタンを押してください。新規登録画面の項目を埋めてください。<br>新規登録で来ましたらログイン中の名前が表示されます。<br>新規登録画面で必要事項を入力したら登録を押してください。<br>注記新規登録のパスワード、メールアドレスの確認はできません、定期的にアカウントを削除させていただきます。削除タイミングはTweetでご連絡いたします。<br>不安な方はメールアドレスt@tパスワード123456でログインできます。
+        </h4>
+        </div>
+       <div class="content">
+        <h2>3.最後に</h2>
+        <h4>問い合わせホームより感想、改善点をお待ちしております。<br>
+            不具合など急ぎのご用があった場合はTweetの方にDMお願いします。
+        </h4>
+       </div>
+
+
+      <div class="content">
+         <%= link_to 'トップに戻る', posts_path, class: "search-button", data: { turbo: false } %>
+        <p class=masa>© 2024 Masaki_yoshida.</p>
+      </div>
     </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
-    <div class="content">
-    </div>
 
-
-
-
-
-      
-    <div class="content">
-      <%= link_to 'トップに戻る', posts_path, class: "search-button", data: { turbo: false } %>
-    </div>
-    <div class="content">
-      <p class=masa>© 2024 Masaki_yoshida.</p>
-    </div>
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-<canvas id="waveCanvas"></canvas>
-<!--/wrapper--></div>
-
+  <!-- particles.jsを読み込む -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <!-- 5-8.jsを読み込む -->
+  <script src="http://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/move02/5-8/js/5-8.js"></script>
 </body>
+
 </html>
+
