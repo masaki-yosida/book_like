@@ -30,6 +30,10 @@
       <% end %>
       </div>
       <%= link_to 'お問い合わせフォーム', contact_books_path, class: 'btn btn-primary' %>
+      <!-- Add this button wherever you want it in your HTML -->
+      <a href="https://twitter.com/YMASAKI39" class="twitter-share-button" data-show-count="false">Tweet</a>
+
+
       <div class="content">
       <%= form_tag(books_path, method: :get, class: "search-form") do %>
       <%= select_tag :author_id, options_for_select(Author.all.map { |a| [a.name, a.id] }, params[:author_id]), class: "author-select" %>
